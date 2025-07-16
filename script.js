@@ -4,12 +4,22 @@ let currentIds = [];
 let roundCount = 1;
 const maxRounds = 20;
 
-function renderBattle(idol1, idol2) {
+// Display current round
+function updateRoundDisplay() {
+  const roundText = roundCount > maxRounds
+    ? "✨ Final Round Complete ✨"
+    : `Round ${roundCount} of ${maxRounds}`;
+  document.getElementById("round-counter").textContent = roundText;
+}
+
+// Render idol cards or final bias
+function renderBattle(idol1, idol2, keepOnLeft = true) {
+  updateRoundDisplay();
   const battleArena = document.getElementById("battle-arena");
   battleArena.innerHTML = "";
 
   if (allIdols.length === 1 || roundCount > maxRounds) {
-    const solo = idol1;
+    const solo = idol1 || allIdols[0];
     const banner = document.createElement("h1");
     banner.textContent = "💜 Your Ultimate Bias 💜";
 
@@ -36,7 +46,9 @@ function renderBattle(idol1, idol2) {
     return;
   }
 
-  [idol1, idol2].forEach((idol, index) => {
+  const idols = keepOnLeft ? [idol1, idol2] : [idol2, idol1];
+
+  idols.forEach((idol, index) => {
     const card = document.createElement("div");
     card.className = "card";
 
@@ -64,9 +76,12 @@ function renderBattle(idol1, idol2) {
       allIdols = allIdols.filter(i => i.id !== removeId);
 
       const newIdol = getRandomUniqueIdol(keepIdol.id);
-      currentIds = [keepIdol.id, newIdol.id];
+      currentIds = index === 0
+        ? [keepIdol.id, newIdol.id]
+        : [newIdol.id, keepIdol.id];
+
       roundCount++;
-      renderBattle(keepIdol, newIdol);
+      renderBattle(keepIdol, newIdol, index === 0);
     });
 
     card.appendChild(img);
@@ -76,11 +91,13 @@ function renderBattle(idol1, idol2) {
   });
 }
 
+// Get a random idol that's not excluded
 function getRandomUniqueIdol(excludeId) {
   const filtered = allIdols.filter(idol => idol.id !== excludeId);
   return filtered[Math.floor(Math.random() * filtered.length)];
 }
 
+// Load data and start battle
 fetch("kpopnet.json")
   .then(response => response.json())
   .then(data => {
