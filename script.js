@@ -1,14 +1,18 @@
 let allIdols = [];
 let groupMap = {};
 let currentIds = [];
+let roundCount = 1;
+const maxRounds = 20;
 
 function renderBattle(idol1, idol2) {
   const battleArena = document.getElementById("battle-arena");
   battleArena.innerHTML = "";
 
-  // Special case: only one idol left
-  if (allIdols.length === 1) {
-    const solo = allIdols[0];
+  if (allIdols.length === 1 || roundCount > maxRounds) {
+    const solo = idol1;
+    const banner = document.createElement("h1");
+    banner.textContent = "💜 Your Ultimate Bias 💜";
+
     const card = document.createElement("div");
     card.className = "card";
 
@@ -22,9 +26,6 @@ function renderBattle(idol1, idol2) {
     const groupNames = solo.groups.map(gid => groupMap[gid]).join(", ");
     const group = document.createElement("p");
     group.textContent = groupNames;
-
-    const banner = document.createElement("h1");
-    banner.textContent = "💜 Your Ultimate Bias 💜";
 
     card.appendChild(img);
     card.appendChild(name);
@@ -51,20 +52,20 @@ function renderBattle(idol1, idol2) {
     group.textContent = groupNames;
 
     img.addEventListener("click", () => {
-      // Remove the idol who got replaced
+      if (roundCount >= maxRounds) {
+        allIdols = [idol];
+        renderBattle(idol, null);
+        return;
+      }
+
       const keepIdol = idol;
       const otherIndex = index === 0 ? 1 : 0;
       const removeId = currentIds[otherIndex];
       allIdols = allIdols.filter(i => i.id !== removeId);
 
-      // If only one left, show bias banner
-      if (allIdols.length === 1) {
-        renderBattle();
-        return;
-      }
-
       const newIdol = getRandomUniqueIdol(keepIdol.id);
       currentIds = [keepIdol.id, newIdol.id];
+      roundCount++;
       renderBattle(keepIdol, newIdol);
     });
 
