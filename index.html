@@ -1,127 +1,16 @@
----
-layout: default
-title: Bias Battle
----
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Bias Battle</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #fdfdfd;
-      padding: 2rem;
-      text-align: center;
-    }
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-    .gallery {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      flex-wrap: wrap;
-      margin-top: 2rem;
-    }
-    .idol-card {
-      width: 280px;
-      text-align: center;
-    }
-    .idol-card img {
-      width: 100%;
-      height: 400px;
-      object-fit: cover;
-      border-radius: 15px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-      cursor: pointer;
-      transition: transform 0.3s;
-    }
-    .idol-card img:hover {
-      transform: scale(1.05);
-    }
-    .idol-name {
-      font-weight: bold;
-      margin-top: 0.5rem;
-      font-size: 1.1rem;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>🎤 Bias Battle</h1>
-  <p>Click your bias to move to the next round!</p>
-  <div class="gallery"></div>
-
-  <script>
-    const sourceUrl = "https://unpkg.com/kpopnet.json";
-    const selectedGroups = ["aespa", "NewJeans", "LE SSERAFIM"];
-    let idolPool = [];
-    let currentIds = [];
-
-    // Load and filter idols
-    fetch(sourceUrl)
-      .then(res => res.json())
-      .then(data => {
-        idolPool = data.idols
-          .filter(idol => selectedGroups.includes(idol.group))
-          .map(idol => ({
-            name: idol.name,
-            image: idol.thumb_url
-          }));
-
-        pickInitialMatchup();
-        renderBattle();
-      });
-
-    function pickInitialMatchup() {
-      let first = Math.floor(Math.random() * idolPool.length);
-      let second;
-      do {
-        second = Math.floor(Math.random() * idolPool.length);
-      } while (second === first);
-      currentIds = [first, second];
-    }
-
-    function renderBattle() {
-      const gallery = document.querySelector(".gallery");
-      gallery.innerHTML = "";
-      currentIds.forEach(id => {
-        const idol = idolPool[id];
-        const card = document.createElement("div");
-        card.className = "idol-card";
-        card.innerHTML = `
-          <img src="${idol.image}" alt="${idol.name}" data-id="${id}" />
-          <div class="idol-name">${idol.name}</div>
-        `;
-        gallery.appendChild(card);
-      });
-    }
-
-    // Handle voting click
-    document.addEventListener("click", (e) => {
-      const clicked = e.target;
-      if (!clicked.matches("img[data-id]")) return;
-
-      const chosenId = parseInt(clicked.dataset.id);
-      const otherId = currentIds.find(id => id !== chosenId);
-
-      idolPool.splice(otherId, 1); // Remove the other idol
-
-      let newId = null;
-      if (idolPool.length <= 1) {
-        currentIds = [chosenId];
-      } else {
-        do {
-          newId = Math.floor(Math.random() * idolPool.length);
-        } while (newId === chosenId);
-        currentIds = [chosenId, newId];
-      }
-
-      renderBattle();
-    });
-  </script>
+  <header>
+    <h1>Bias Battle ⚔️</h1>
+    <p>Which K-pop idol is your ultimate bias?</p>
+  </header>
+  <main id="battle-arena"></main>
+  <script src="script.js"></script>
 </body>
 </html>

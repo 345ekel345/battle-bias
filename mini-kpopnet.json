@@ -1,0 +1,278 @@
+{
+  "groups": [
+    {
+      "agency_name": "ADOR",
+      "debut_date": "2022-08-01",
+      "disband_date": null,
+      "id": "-j_4yQsJ6gTjN_4kkH88",
+      "members": [
+        {
+          "current": true,
+          "idol_id": "WPHrvdF9TXnNGZBGuqdA",
+          "roles": null
+        },
+        {
+          "current": true,
+          "idol_id": "PS8RoRJbBH1u8Nd5sUeU",
+          "roles": null
+        },
+        {
+          "current": true,
+          "idol_id": "TVCuBQ7xN3XehgHOmVHU",
+          "roles": null
+        },
+        {
+          "current": true,
+          "idol_id": "4LyWNBFoVO71ieniJmVe",
+          "roles": null
+        },
+        {
+          "current": true,
+          "idol_id": "QSXtAnZDdjo1e6Hj2FBi",
+          "roles": null
+        }
+      ],
+      "name": "NewJeans",
+      "name_alias": null,
+      "name_original": "뉴진스",
+      "parent_id": null,
+      "thumb_url": "https://up.kpop.re/net/f6/00fd1e729b785e16e238d6b4df31f5423738bd.jpg",
+      "urls": [
+        "https://net.kpop.re/?id=-j_4yQsJ6gTjN_4kkH88",
+        "https://selca.kastden.org/noona/group/newjeans/",
+        "https://namu.wiki/w/NewJeans"
+      ]
+    },
+    {
+      "agency_name": "SM Entertainment",
+      "debut_date": "2020-11-17",
+      "disband_date": null,
+      "id": "7WJQQrEe45xdB9XpC5FY",
+      "members": [
+        {
+          "current": true,
+          "idol_id": "psgo1rR1p5er5zLaIS-O",
+          "roles": "main vocal, maknae"
+        },
+        {
+          "current": true,
+          "idol_id": "_9iT6Bpm9nUmBdXnkHlm",
+          "roles": null
+        },
+        {
+          "current": true,
+          "idol_id": "cKmxZiz-PZo3N1zwArAY",
+          "roles": "main rapper"
+        },
+        {
+          "current": true,
+          "idol_id": "SaFs6SnUBTHDspwTc8eh",
+          "roles": "leader, main dancer"
+        }
+      ],
+      "name": "aespa",
+      "name_alias": null,
+      "name_original": "에스파",
+      "parent_id": null,
+      "thumb_url": "https://up.kpop.re/net/aa/db8f18ae1fd3aadfc57114356e9243943c57b4.jpg",
+      "urls": [
+        "https://net.kpop.re/?id=7WJQQrEe45xdB9XpC5FY",
+        "https://selca.kastden.org/noona/group/aespa/",
+        "https://namu.wiki/w/aespa"
+      ]
+    }
+  ],
+  "idols": [
+    {
+      "birth_date": "2008-04-21",
+      "debut_date": "2022-08-01",
+      "groups": [
+        "-j_4yQsJ6gTjN_4kkH88"
+      ],
+      "height": 171,
+      "id": "WPHrvdF9TXnNGZBGuqdA",
+      "name": "Hyein",
+      "name_alias": null,
+      "name_original": "혜인",
+      "real_name": "Lee Hyein",
+      "real_name_original": "이혜인",
+      "thumb_url": "https://up.kpop.re/net/af/08799370cd2255d89e694010b1f06aeab27d3d.jpg",
+      "urls": [
+        "https://net.kpop.re/?id=WPHrvdF9TXnNGZBGuqdA",
+        "https://selca.kastden.org/noona/idol/newjeans_hyein/",
+        "https://namu.wiki/w/혜인(NewJeans)"
+      ],
+      "weight": null
+    },
+    {
+      "birth_date": "2006-05-15",
+      "debut_date": "2022-08-01",
+      "groups": [
+        "-j_4yQsJ6gTjN_4kkH88"
+      ],
+      "height": null,
+      "id": "PS8RoRJbBH1u8Nd5sUeU",
+      "name": "Haerin",
+      "name_alias": null,
+      "name_original": "해린",
+      "real_name": "Kang Haerin",
+      "real_name_original": "강해린",
+      "thumb_url": "https://up.kpop.re/net/f1/cde8a0051bc222ff949fd876a4f26afd7a7ee3.jpg",
+      "urls": [
+        "https://net.kpop.re/?id=PS8RoRJbBH1u8Nd5sUeU",
+        "https://selca.kastden.org/noona/idol/newjeans_haerin/",
+        "https://namu.wiki/w/해린(NewJeans)"
+      ],
+      "weight": null
+    },
+    {
+      "birth_date": "2005-04-11",
+      "debut_date": "2022-08-01",
+      "groups": [
+        "-j_4yQsJ6gTjN_4kkH88"
+      ],
+      "height": null,
+      "id": "TVCuBQ7xN3XehgHOmVHU",
+      "name": "Danielle",
+      "name_alias": null,
+      "name_original": "다니엘",
+      "real_name": "Danielle Marsh",
+      "real_name_original": "Danielle Marsh",
+      "thumb_url": "https://up.kpop.re/net/20/13b8c2ae3eb4855a24e4e56b1d97fc118f9404.jpg",
+      "urls": [
+        "https://net.kpop.re/?id=TVCuBQ7xN3XehgHOmVHU",
+        "https://selca.kastden.org/noona/idol/newjeans_danielle/",
+        "https://namu.wiki/w/다니엘(NewJeans)"
+      ],
+      "weight": null
+    },
+    {
+      "birth_date": "2004-10-06",
+      "debut_date": "2022-08-01",
+      "groups": [
+        "-j_4yQsJ6gTjN_4kkH88"
+      ],
+      "height": 164,
+      "id": "4LyWNBFoVO71ieniJmVe",
+      "name": "Hanni",
+      "name_alias": null,
+      "name_original": "하니",
+      "real_name": "Phạm Ngọc Hân",
+      "real_name_original": "Phạm Ngọc Hân",
+      "thumb_url": "https://up.kpop.re/net/01/ca009f54d7488acf309bae7865c81d1e67b0a2.jpg",
+      "urls": [
+        "https://net.kpop.re/?id=4LyWNBFoVO71ieniJmVe",
+        "https://selca.kastden.org/noona/idol/newjeans_hanni/",
+        "https://namu.wiki/w/하니(NewJeans)"
+      ],
+      "weight": null
+    },
+    {
+      "birth_date": "2004-05-07",
+      "debut_date": "2022-08-01",
+      "groups": [
+        "-j_4yQsJ6gTjN_4kkH88"
+      ],
+      "height": 169,
+      "id": "QSXtAnZDdjo1e6Hj2FBi",
+      "name": "Minji",
+      "name_alias": null,
+      "name_original": "민지",
+      "real_name": "Kim Minji",
+      "real_name_original": "김민지",
+      "thumb_url": "https://up.kpop.re/net/ea/ab3c0e725b1c0346f026b0e7ade6a97c1eb23c.jpg",
+      "urls": [
+        "https://net.kpop.re/?id=QSXtAnZDdjo1e6Hj2FBi",
+        "https://selca.kastden.org/noona/idol/newjeans_minji/",
+        "https://namu.wiki/w/민지(NewJeans)"
+      ],
+      "weight": null
+    },
+    {
+      "birth_date": "2002-10-23",
+      "debut_date": "2020-11-17",
+      "groups": [
+        "7WJQQrEe45xdB9XpC5FY"
+      ],
+      "height": 161,
+      "id": "psgo1rR1p5er5zLaIS-O",
+      "name": "Ningning",
+      "name_alias": null,
+      "name_original": "닝닝",
+      "real_name": "Ning Yizhuo",
+      "real_name_original": "宁艺卓",
+      "thumb_url": "https://up.kpop.re/net/51/7c5c87d77103782cee3b44c1d9e4a5afc0e6e0.jpg",
+      "urls": [
+        "https://net.kpop.re/?id=psgo1rR1p5er5zLaIS-O",
+        "https://selca.kastden.org/noona/idol/aespa_ningning/",
+        "https://namu.wiki/w/닝닝"
+      ],
+      "weight": 43
+    },
+    {
+      "birth_date": "2001-01-01",
+      "debut_date": "2020-11-17",
+      "groups": [
+        "8t-jPdvEkQAw52HDMedH",
+        "7WJQQrEe45xdB9XpC5FY"
+      ],
+      "height": 164,
+      "id": "_9iT6Bpm9nUmBdXnkHlm",
+      "name": "Winter",
+      "name_alias": null,
+      "name_original": "윈터",
+      "real_name": "Kim MInjeong",
+      "real_name_original": "김민정",
+      "thumb_url": "https://up.kpop.re/net/88/972f318d35384c4bf0f9374a1e6395ae1c9a3b.jpg",
+      "urls": [
+        "https://net.kpop.re/?id=_9iT6Bpm9nUmBdXnkHlm",
+        "https://selca.kastden.org/noona/idol/aespa_winter/",
+        "https://namu.wiki/w/윈터(aespa)"
+      ],
+      "weight": null
+    },
+    {
+      "birth_date": "2000-10-30",
+      "debut_date": "2020-11-17",
+      "groups": [
+        "7WJQQrEe45xdB9XpC5FY"
+      ],
+      "height": 163,
+      "id": "cKmxZiz-PZo3N1zwArAY",
+      "name": "Giselle",
+      "name_alias": null,
+      "name_original": "지젤",
+      "real_name": "Uchinaga Eri",
+      "real_name_original": "内永 えり",
+      "thumb_url": "https://up.kpop.re/net/af/687ea3ffa60004eeb8b0bed7ea274151ed23ba.jpg",
+      "urls": [
+        "https://net.kpop.re/?id=cKmxZiz-PZo3N1zwArAY",
+        "https://selca.kastden.org/noona/idol/aespa_giselle/",
+        "https://namu.wiki/w/지젤(aespa)"
+      ],
+      "weight": null
+    },
+    {
+      "birth_date": "2000-04-11",
+      "debut_date": "2020-11-17",
+      "groups": [
+        "8t-jPdvEkQAw52HDMedH",
+        "7WJQQrEe45xdB9XpC5FY"
+      ],
+      "height": 168,
+      "id": "SaFs6SnUBTHDspwTc8eh",
+      "name": "Karina",
+      "name_alias": null,
+      "name_original": "카리나",
+      "real_name": "Yoo Jimin",
+      "real_name_original": "유지민",
+      "thumb_url": "https://up.kpop.re/net/5b/8a7f99bbbb949519620a5fe28a394db322d026.jpg",
+      "urls": [
+        "https://net.kpop.re/?id=SaFs6SnUBTHDspwTc8eh",
+        "https://selca.kastden.org/noona/idol/aespa_karina/",
+        "https://namu.wiki/w/카리나(aespa)"
+      ],
+      "weight": 45
+    }
+  ]
+}
