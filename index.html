@@ -21,49 +21,33 @@ title: Bias Battle
       font-size: 2.5rem;
       margin-bottom: 1rem;
     }
-    .matchup {
+    .gallery {
       display: flex;
       justify-content: center;
       gap: 40px;
-      margin: 2rem 0;
+      margin-top: 2rem;
       flex-wrap: wrap;
     }
-    .matchup a {
-      display: block;
+    .gallery img {
       width: 300px;
       height: 400px;
-      overflow: hidden;
+      object-fit: cover;
       border-radius: 15px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.2);
       transition: transform 0.3s;
     }
-    .matchup a:hover {
+    .gallery img:hover {
       transform: scale(1.05);
-    }
-    .matchup img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .instructions {
-      font-size: 1.2rem;
-      margin-top: 2rem;
     }
   </style>
 </head>
 <body>
-  <h1>🎤 Welcome to Bias Ble!</h1>
-  <p class="instructions">Pick your favorite idol and let the fandom decide who reigns supreme 💥</p>
+  <h1>🎤 Welcome to Bias Battle!</h1>
+  <p>Feast your eyes on today’s featured idols 👑</p>
 
-  <div class="matchup">
-    <a href="bias1.html">
-      <img src="images/bias1.jpg" alt="Bias 1">
-    </a>
-    <a href="bias2.html">
-      <img src="images/bias2.jpg" alt="Bias 2">
-    </a>
+  <div class="gallery">
+    <img src="images/chaewon.jpg" alt="Bias 1">
+    <img src="images/karina.jpeg" alt="Bias 2">
   </div>
-
-  <p class="instructions">Want to suggest a new battle? <a href="mailto:youremail@example.com">Submit your matchup</a></p>
 </body>
 </html>
