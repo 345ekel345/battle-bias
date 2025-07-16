@@ -80,7 +80,7 @@ function getRandomUniqueIdol(excludeId) {
   return filtered[Math.floor(Math.random() * filtered.length)];
 }
 
-fetch("mini-kpopnet.json")
+fetch("kpopnet.json")
   .then(response => response.json())
   .then(data => {
     allIdols = data.idols;
