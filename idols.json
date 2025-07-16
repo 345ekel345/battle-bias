@@ -1,35 +1,59 @@
 [
     {
-      "name": "Jungkook",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Jungkook_at_the_White_House_in_2022.jpg"
+      "name": "Karina (aespa)",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Karina_at_Coachella_2022.jpg"
     },
     {
-      "name": "Lisa",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Lisa_at_Celine_Show_Paris_Fashion_Week_2022.jpg"
+      "name": "Winter (aespa)",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Winter_at_Coachella_2022.jpg"
     },
     {
-      "name": "V (Taehyung)",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/2/2f/V_at_the_White_House_in_2022.jpg"
+      "name": "Giselle (aespa)",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Giselle_at_Coachella_2022.jpg"
     },
     {
-      "name": "Jisoo",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Jisoo_at_Dior_Show_Paris_Fashion_Week_2022.jpg"
+      "name": "Ningning (aespa)",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Ningning_at_Coachella_2022.jpg"
     },
     {
-      "name": "IU",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/7/7e/IU_at_Melon_Music_Awards_2019.jpg"
+      "name": "Minji (NewJeans)",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Minji_NewJeans_2023.jpg"
     },
     {
-      "name": "Jimin",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Jimin_at_the_White_House_in_2022.jpg"
+      "name": "Hanni (NewJeans)",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Hanni_NewJeans_2023.jpg"
     },
     {
-      "name": "Jennie",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Jennie_at_Chanel_Show_Paris_Fashion_Week_2022.jpg"
+      "name": "Danielle (NewJeans)",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Danielle_NewJeans_2023.jpg"
     },
     {
-      "name": "Cha Eun-woo",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Cha_Eun-woo_at_Dior_Show_Paris_Fashion_Week_2022.jpg"
+      "name": "Haerin (NewJeans)",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Haerin_NewJeans_2023.jpg"
+    },
+    {
+      "name": "Hyein (NewJeans)",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Hyein_NewJeans_2023.jpg"
+    },
+    {
+      "name": "Chaewon (LE SSERAFIM)",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Chaewon_LE_SSERAFIM_2023.jpg"
+    },
+    {
+      "name": "Sakura (LE SSERAFIM)",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Sakura_LE_SSERAFIM_2023.jpg"
+    },
+    {
+      "name": "Yunjin (LE SSERAFIM)",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Yunjin_LE_SSERAFIM_2023.jpg"
+    },
+    {
+      "name": "Kazuha (LE SSERAFIM)",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Kazuha_LE_SSERAFIM_2023.jpg"
+    },
+    {
+      "name": "Eunchae (LE SSERAFIM)",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Eunchae_LE_SSERAFIM_2023.jpg"
     }
   ]
   

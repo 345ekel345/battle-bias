@@ -10,15 +10,29 @@ title: Bias Battle
   <title>Bias Battle</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      padding: 2rem;
+      background-color: #fdfdfd;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
     .gallery {
       display: flex;
       justify-content: center;
       gap: 40px;
-      margin-top: 2rem;
       flex-wrap: wrap;
+      margin-top: 2rem;
     }
-    .idol-img {
-      width: 300px;
+    .idol-card {
+      width: 280px;
+      text-align: center;
+    }
+    .idol-card img {
+      width: 100%;
       height: 400px;
       object-fit: cover;
       border-radius: 15px;
@@ -26,66 +40,75 @@ title: Bias Battle
       cursor: pointer;
       transition: transform 0.3s;
     }
-    .idol-img:hover {
+    .idol-card img:hover {
       transform: scale(1.05);
+    }
+    .idol-name {
+      margin-top: 0.5rem;
+      font-weight: bold;
+      font-size: 1.1rem;
     }
   </style>
 </head>
 <body>
-  <h1 style="text-align:center;">🎤 Bias Battle</h1>
+  <h1>🎤 Bias Battle</h1>
+  <p>Click your bias to move to the next round!</p>
   <div class="gallery"></div>
 
   <script>
+    const sourceUrl = "https://unpkg.com/kpopnet.json/kpopnet.min.json";
+    const selectedGroups = ["aespa", "NewJeans", "LE SSERAFIM"];
     let idolPool = [];
     let currentIds = [];
 
-    fetch("idols.json")
-      .then(response => response.json())
+    fetch(sourceUrl)
+      .then(res => res.json())
       .then(data => {
-        idolPool = data;
+        idolPool = data.idols
+          .filter(idol => selectedGroups.includes(idol.group))
+          .map(idol => ({
+            name: idol.name,
+            image: idol.thumb_url
+          }));
 
-        // Pick two different random idols to start
-        let first = Math.floor(Math.random() * idolPool.length);
-        let second;
-        do {
-          second = Math.floor(Math.random() * idolPool.length);
-        } while (second === first);
-
-        currentIds = [first, second];
+        pickInitialMatchup();
         renderBattle();
       });
+
+    function pickInitialMatchup() {
+      let first = Math.floor(Math.random() * idolPool.length);
+      let second;
+      do {
+        second = Math.floor(Math.random() * idolPool.length);
+      } while (second === first);
+      currentIds = [first, second];
+    }
 
     function renderBattle() {
       const gallery = document.querySelector(".gallery");
       gallery.innerHTML = "";
-
       currentIds.forEach(id => {
         const idol = idolPool[id];
-        const img = document.createElement("img");
-        img.src = idol.image;
-        img.alt = idol.name;
-        img.className = "idol-img";
-        img.dataset.keepIndex = id;
-        gallery.appendChild(img);
+        const card = document.createElement("div");
+        card.className = "idol-card";
+        card.innerHTML = `
+          <img src="${idol.image}" alt="${idol.name}" data-id="${id}" />
+          <div class="idol-name">${idol.name}</div>
+        `;
+        gallery.appendChild(card);
       });
     }
 
-    document.addEventListener("click", (event) => {
-      const chosen = event.target;
-      const gallery = document.querySelector(".gallery");
-      if (!chosen.classList.contains("idol-img")) return;
-
-      const chosenId = parseInt(chosen.dataset.keepIndex);
+    document.addEventListener("click", (e) => {
+      if (!e.target.matches("img[data-id]")) return;
+      const chosenId = parseInt(e.target.dataset.id);
       const otherId = currentIds.find(id => id !== chosenId);
 
-      // Remove loser from pool
-      idolPool.splice(otherId, 1);
+      idolPool.splice(otherId, 1); // Remove loser
 
-      // Pick new idol
       let newId = null;
       if (idolPool.length <= 1) {
-        // End of the pool or no replacement possible
-        currentIds = [chosenId];
+        currentIds = [chosenId]; // Just show the winner
       } else {
         do {
           newId = Math.floor(Math.random() * idolPool.length);
