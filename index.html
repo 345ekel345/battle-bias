@@ -6,21 +6,10 @@ title: Bias Battle
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Bias Battle</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #fdfdfd;
-      margin: 0;
-      padding: 2rem;
-      text-align: center;
-    }
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
     .gallery {
       display: flex;
       justify-content: center;
@@ -28,26 +17,84 @@ title: Bias Battle
       margin-top: 2rem;
       flex-wrap: wrap;
     }
-    .gallery img {
+    .idol-img {
       width: 300px;
       height: 400px;
       object-fit: cover;
       border-radius: 15px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      cursor: pointer;
       transition: transform 0.3s;
     }
-    .gallery img:hover {
+    .idol-img:hover {
       transform: scale(1.05);
     }
   </style>
 </head>
 <body>
-  <h1>🎤 Welcome to Bias Battle!</h1>
-  <p>Feast your eyes on today’s featured idols 👑</p>
+  <h1 style="text-align:center;">🎤 Bias Battle</h1>
+  <div class="gallery"></div>
 
-  <div class="gallery">
-    <img src="images/chaewon.jpg" alt="Bias 1">
-    <img src="images/karina.jpeg" alt="Bias 2">
-  </div>
+  <script>
+    let idolPool = [];
+    let currentIds = [];
+
+    fetch("idols.json")
+      .then(response => response.json())
+      .then(data => {
+        idolPool = data;
+
+        // Pick two different random idols to start
+        let first = Math.floor(Math.random() * idolPool.length);
+        let second;
+        do {
+          second = Math.floor(Math.random() * idolPool.length);
+        } while (second === first);
+
+        currentIds = [first, second];
+        renderBattle();
+      });
+
+    function renderBattle() {
+      const gallery = document.querySelector(".gallery");
+      gallery.innerHTML = "";
+
+      currentIds.forEach(id => {
+        const idol = idolPool[id];
+        const img = document.createElement("img");
+        img.src = idol.image;
+        img.alt = idol.name;
+        img.className = "idol-img";
+        img.dataset.keepIndex = id;
+        gallery.appendChild(img);
+      });
+    }
+
+    document.addEventListener("click", (event) => {
+      const chosen = event.target;
+      const gallery = document.querySelector(".gallery");
+      if (!chosen.classList.contains("idol-img")) return;
+
+      const chosenId = parseInt(chosen.dataset.keepIndex);
+      const otherId = currentIds.find(id => id !== chosenId);
+
+      // Remove loser from pool
+      idolPool.splice(otherId, 1);
+
+      // Pick new idol
+      let newId = null;
+      if (idolPool.length <= 1) {
+        // End of the pool or no replacement possible
+        currentIds = [chosenId];
+      } else {
+        do {
+          newId = Math.floor(Math.random() * idolPool.length);
+        } while (newId === chosenId);
+        currentIds = [chosenId, newId];
+      }
+
+      renderBattle();
+    });
+  </script>
 </body>
 </html>
