@@ -12,8 +12,8 @@ title: Bias Battle
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      padding: 2rem;
       background-color: #fdfdfd;
+      padding: 2rem;
       text-align: center;
     }
     h1 {
@@ -44,8 +44,8 @@ title: Bias Battle
       transform: scale(1.05);
     }
     .idol-name {
-      margin-top: 0.5rem;
       font-weight: bold;
+      margin-top: 0.5rem;
       font-size: 1.1rem;
     }
   </style>
@@ -56,11 +56,12 @@ title: Bias Battle
   <div class="gallery"></div>
 
   <script>
-    const sourceUrl = "https://unpkg.com/kpopnet.json/kpopnet.min.json";
+    const sourceUrl = "https://unpkg.com/kpopnet.json";
     const selectedGroups = ["aespa", "NewJeans", "LE SSERAFIM"];
     let idolPool = [];
     let currentIds = [];
 
+    // Load and filter idols
     fetch(sourceUrl)
       .then(res => res.json())
       .then(data => {
@@ -99,16 +100,19 @@ title: Bias Battle
       });
     }
 
+    // Handle voting click
     document.addEventListener("click", (e) => {
-      if (!e.target.matches("img[data-id]")) return;
-      const chosenId = parseInt(e.target.dataset.id);
+      const clicked = e.target;
+      if (!clicked.matches("img[data-id]")) return;
+
+      const chosenId = parseInt(clicked.dataset.id);
       const otherId = currentIds.find(id => id !== chosenId);
 
-      idolPool.splice(otherId, 1); // Remove loser
+      idolPool.splice(otherId, 1); // Remove the other idol
 
       let newId = null;
       if (idolPool.length <= 1) {
-        currentIds = [chosenId]; // Just show the winner
+        currentIds = [chosenId];
       } else {
         do {
           newId = Math.floor(Math.random() * idolPool.length);
