@@ -20,7 +20,7 @@ A fun and interactive K-pop showdown game where users choose their **Ultimate Bi
 - HTML
 - CSS
 - JavaScript
-- JSON (`kpopnet.json` – contains idol & group data)
+- JSON (`kpopnet.json` – contains idol & group data) extracted from: https://github.com/kpopnet/kpopnet.json
 
 ---
 
