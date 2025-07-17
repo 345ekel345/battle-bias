@@ -10,7 +10,20 @@
     <h1>Bias Battle ⚔️</h1>
     <p>Which K-pop idol is your ultimate bias?</p>
   </header>
-  <div id="round-counter">Round 1 of 20</div>
+
+  <div id="controls">
+    <label for="round-selector">Choose number of rounds:</label>
+    <select id="round-selector">
+      <option value="10">10</option>
+      <option value="15">15</option>
+      <option value="20" selected>20</option>
+      <option value="25">25</option>
+      <option value="834">ALL(834)</option>
+    </select>
+    <div id="idol-count">Available Idols: ...</div>
+    <div id="round-counter">Round 1 of 20</div>
+  </div>
+
   <main id="battle-arena"></main>
   <script src="script.js"></script>
 </body>

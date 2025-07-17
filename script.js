@@ -2,17 +2,23 @@ let allIdols = [];
 let groupMap = {};
 let currentIds = [];
 let roundCount = 1;
-const maxRounds = 20;
+let maxRounds = 20;
 
-// Display current round
+const roundSelector = document.getElementById("round-selector");
+roundSelector.addEventListener("change", () => {
+  maxRounds = parseInt(roundSelector.value);
+  document.getElementById("round-counter").textContent = `Round 1 of ${maxRounds}`;
+  roundCount = 1;
+  shuffleAndStart();
+});
+
 function updateRoundDisplay() {
-  const roundText = roundCount > maxRounds
+  const text = roundCount > maxRounds
     ? "✨ Final Round Complete ✨"
     : `Round ${roundCount} of ${maxRounds}`;
-  document.getElementById("round-counter").textContent = roundText;
+  document.getElementById("round-counter").textContent = text;
 }
 
-// Render idol cards or final bias
 function renderBattle(idol1, idol2, keepOnLeft = true) {
   updateRoundDisplay();
   const battleArena = document.getElementById("battle-arena");
@@ -91,28 +97,33 @@ function renderBattle(idol1, idol2, keepOnLeft = true) {
   });
 }
 
-// Get a random idol that's not excluded
 function getRandomUniqueIdol(excludeId) {
   const filtered = allIdols.filter(idol => idol.id !== excludeId);
   return filtered[Math.floor(Math.random() * filtered.length)];
 }
 
-// Load data and start battle
+function shuffleAndStart() {
+  const shuffled = allIdols.sort(() => 0.5 - Math.random());
+  let first = shuffled[0];
+  let second;
+  do {
+    second = shuffled[1];
+  } while (second.id === first.id);
+
+  currentIds = [first.id, second.id];
+  renderBattle(first, second);
+}
+
 fetch("kpopnet.json")
   .then(response => response.json())
   .then(data => {
     allIdols = data.idols;
+    document.getElementById("idol-count").textContent = `Available Idols: ${allIdols.length}`;
+
     data.groups.forEach(group => {
       groupMap[group.id] = group.name;
     });
 
-    let first = allIdols[Math.floor(Math.random() * allIdols.length)];
-    let second;
-    do {
-      second = allIdols[Math.floor(Math.random() * allIdols.length)];
-    } while (second.id === first.id);
-
-    currentIds = [first.id, second.id];
-    renderBattle(first, second);
+    shuffleAndStart();
   })
   .catch(error => console.error("Error loading K-pop data:", error));
